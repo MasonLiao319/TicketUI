@@ -149,8 +149,10 @@
                         `Purchase failed: ${errorData.error || errorData.details || errorData.message || "Unknown error"}`,
                     );
                 } catch (jsonError) {
+                    alert(jsonError);
                     alert("Purchase failed: Unable to process server response");
                 }
+                con;
             }
         } catch (error) {
             console.error("Error:", error);
