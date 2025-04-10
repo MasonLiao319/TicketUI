@@ -130,13 +130,16 @@
             }
 
             // Send the API request
-            const response = await fetch("/api/tickets", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
+            const response = await fetch(
+                "https://nscc-0424837-ticketapi-augpgqecg5eebkcu.canadacentral-01.azurewebsites.net/api/tickets",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
                 },
-                body: JSON.stringify(data),
-            });
+            );
 
             if (response.ok) {
                 alert("Ticket purchase successful!");
@@ -144,7 +147,7 @@
             } else {
                 // Handle error responses
                 try {
-                    const errorData = await response.text();
+                    const errorData = await response.json();
                     alert(
                         `Purchase failed: ${errorData.error || errorData.details || errorData.message || "Unknown error"}`,
                     );
@@ -152,7 +155,6 @@
                     alert(jsonError);
                     alert("Purchase failed: Unable to process server response");
                 }
-                con;
             }
         } catch (error) {
             console.error("Error:", error);
