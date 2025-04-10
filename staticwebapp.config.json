@@ -1,0 +1,17 @@
+{
+    "routes": [
+        {
+            "route": "/api/tickets",
+            "methods": [
+                "POST",
+                "OPTIONS"
+            ],
+            "rewrite": "https://nscc-0424837-ticketapi-augpgqecg5eebkcu.canadacentral-01.azurewebsites.net/api/tickets"
+        }
+    ],
+    "globalHeaders": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+    }
+}
