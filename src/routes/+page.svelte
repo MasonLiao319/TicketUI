@@ -144,7 +144,7 @@
             } else {
                 // Handle error responses
                 try {
-                    const errorData = await response.json();
+                    const errorData = await response.text();
                     alert(
                         `Purchase failed: ${errorData.error || errorData.details || errorData.message || "Unknown error"}`,
                     );
